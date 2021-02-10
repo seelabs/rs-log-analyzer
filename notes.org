@@ -1,0 +1,10 @@
+* There are multi-line log messages that don't group well:
+2021-Feb-03 17:50:06.192191714 UTC LedgerConsensus:WRN View of consensus changed during open status=open,  mode=proposing
+2021-Feb-03 17:50:06.192217380 UTC LedgerConsensus:WRN E493A7F74B84F4B0F007451CCF2AFF367A9AD5173C4C21E8543E8F06CFA3AB40 to 9D7BF456677D3EAD508ACA936CACA1DB53B5782F84696A0B652017635FF2DC1E
+2021-Feb-03 17:50:06.192311774 UTC LedgerConsensus:WRN {"accepted":true,"account_hash":"3E1D6509CBC5F48FF7C6E499B45BAD643CA6981570BB036CEC4E166ED864C942","close_flags":0,"close_time":665689802,"close_time_human":"2021-Feb-03 17:50:02.000000000 UTC","close_time_resolution":10,"closed":true,"hash":"E493A7F74B84F4B0F007451CCF2AFF367A9AD5173C4C21E8543E8F06CFA3AB40","ledger_hash":"E493A7F74B84F4B0F007451CCF2AFF367A9AD5173C4C21E8543E8F06CFA3AB40","ledger_index":"270","parent_close_time":665689801,"parent_hash":"D63F8AC29462F185831969A39F6D8A3AEF53E450F129E1F442D40118295D5A42","seqNum":"270","totalCoins":"100000000000000000","total_coins":"100000000000000000","transaction_hash":"0000000000000000000000000000000000000000000000000000000000000000"}
+
+* Consider outputing the file and line for easy grouping
+
+* For now, Ignore log entries that start with '{' or start with a word containing any numerals (group them into an "ignore" group)
+
+* TODO: Handle multi-line log lines (See LedgerHistory:ERR valid) 
